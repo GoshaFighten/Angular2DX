@@ -1,1 +1,8 @@
-<dx-button text="Press me" (onClick)="helloWorld()"></dx-button>
+<dx-data-grid [dataSource]="orders" [columns]="['orderID', {
+    dataField: 'orderDate',
+    dataType: 'date'
+}, 'customerName', 'shipCountry', 'shipCity']" [filterRow]="{visible: true}" [headerFilter]="{visible: true}" [groupPanel]="{visible: true}"
+    [summary]="{
+        totalItems: [{column: 'shipCity', summaryType: 'count'}],
+        groupItems: [{ summaryType: 'count' }]
+}"></dx-data-grid>
