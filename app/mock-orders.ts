@@ -1,4 +1,4 @@
-import { Order } from './order';
+import { Order } from "./order";
 
 export const ORDERS: Order[] = [
     { "orderID": 10248, "orderDate": new Date("1996-07-04T00:00:00"), "customerName": "Paul Henriot", "shipCountry": "France", "shipCity": "Reims" },

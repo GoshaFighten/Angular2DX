@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { Order } from './order'
-import { OrderService } from './order.service';
+import { Order } from "./order";
+import { OrderService } from "./order.service";
 
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app/app.component.html',
+    selector: "my-app",
+    templateUrl: "app/app.component.html",
     providers: [OrderService]
 })
 export class AppComponent implements OnInit {

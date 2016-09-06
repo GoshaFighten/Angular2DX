@@ -1,8 +1,8 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }      from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { DxDataGrid } from 'devextreme-angular2';
-import { AppComponent }  from './app.component';
+import { DxDataGrid } from "devextreme-angular2";
+import { AppComponent }  from "./app.component";
 
 @NgModule({
     imports: [BrowserModule],

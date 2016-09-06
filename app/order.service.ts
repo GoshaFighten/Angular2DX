@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-import { Order } from './order';
-import { ORDERS } from './mock-orders';
+import { Order } from "./order";
+import { ORDERS } from "./mock-orders";
 
 @Injectable()
 export class OrderService {
