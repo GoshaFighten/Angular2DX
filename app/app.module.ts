@@ -1,12 +1,13 @@
 import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-
-import { DxDataGrid } from "devextreme-angular2";
-import { AppComponent }  from "./app.component";
-
+import { AppComponent }   from "./app.component";
+import { DevExtremeModule } from "devextreme-angular2";
 @NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, DxDataGrid],
+    imports: [
+        BrowserModule,
+        DevExtremeModule
+    ],
+    declarations: [AppComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
