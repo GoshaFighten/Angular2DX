@@ -21,10 +21,14 @@
             '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+            // devextreme & devextreme deps
+            'devextreme': 'npm:devextreme',
+            'jquery': 'npm:jquery/dist/jquery.min.js',
+            'jszip': 'npm:jszip/dist/jszip.min.js',
+            'devextreme-angular': 'npm:devextreme-angular',
             // other libraries
             'rxjs': 'npm:rxjs',
             'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-            'devextreme-angular2': 'node_modules/devextreme-angular2'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -39,8 +43,11 @@
                 main: './index.js',
                 defaultExtension: 'js'
             },
-            'devextreme-angular2': {
+            'devextreme-angular': {
                 main: 'index.js',
+                defaultExtension: 'js'
+            },
+            'devextreme': {
                 defaultExtension: 'js'
             }
         }

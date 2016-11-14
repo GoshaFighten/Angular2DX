@@ -1,8 +1,13 @@
-<dx-data-grid [dataSource]="orders" [columns]="['orderID', {
-    dataField: 'orderDate',
-    dataType: 'date'
-}, 'customerName', 'shipCountry', 'shipCity']" [filterRow]="{visible: true}" [headerFilter]="{visible: true}" [groupPanel]="{visible: true}"
-    [summary]="{
+<dx-data-grid [dataSource]="orders" [summary]="{
         totalItems: [{column: 'shipCity', summaryType: 'count'}],
         groupItems: [{ summaryType: 'count' }]
-}"></dx-data-grid>
+}">
+    <dxi-column dataField="orderID"></dxi-column>
+    <dxi-column dataField="orderDate" dataType="date"></dxi-column>
+    <dxi-column dataField="customerName"></dxi-column>
+    <dxi-column dataField="shipCountry"></dxi-column>
+    <dxi-column dataField="shipCity"></dxi-column>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+    <dxo-group-panel [visible]="true"></dxo-group-panel>
+</dx-data-grid>
