@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { Order } from "./order";
+import { Order } from "./../../models/order";
 import { ORDERS } from "./mock-orders";
 
 @Injectable()
