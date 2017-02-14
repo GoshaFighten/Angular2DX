@@ -1,17 +1,17 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Order } from "./models/order";
-import { OrderService } from "./services/order-service/order.service";
+import { Order } from "./../../models/order";
+import { OrderService } from "./../../services/order-service/order.service";
 
-import { Country } from "./models/country";
-import { CountryService } from "./services/country-service/country.service";
+import { Country } from "./../../models/country";
+import { CountryService } from "./../../services/country-service/country.service";
 
-import { City } from "./models/city";
-import { CityService } from "./services/city-service/city.service";
+import { City } from "./../../models/city";
+import { CityService } from "./../../services/city-service/city.service";
 
 @Component({
     selector: "my-app",
-    templateUrl: "app/app.component.html",
+    templateUrl: "./src/components/app/app.component.html",
     providers: [
         OrderService,
         CountryService,
