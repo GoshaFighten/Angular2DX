@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes, RouteReuseStrategy } from "@angular/router";
+import { CustomReuseStrategy } from "./custom-reuse-strategy";
 import { AppComponent } from "./components/app/app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CounterComponent } from "./components/counter/counter.component";
@@ -41,6 +42,12 @@ const appRoutes: Routes = [
         HomeComponent,
         CounterComponent
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+        {
+            provide: RouteReuseStrategy,
+            useClass: CustomReuseStrategy
+        }
+    ]
 })
 export class AppModule { }
