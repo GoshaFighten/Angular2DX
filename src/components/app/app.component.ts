@@ -1,65 +1,40 @@
-import { Component, OnInit } from "@angular/core";
-
-import { Order } from "./../../models/order";
-import { OrderService } from "./../../services/order-service/order.service";
-
-import { Country } from "./../../models/country";
-import { CountryService } from "./../../services/country-service/country.service";
-
-import { City } from "./../../models/city";
-import { CityService } from "./../../services/city-service/city.service";
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-    selector: "my-app",
-    templateUrl: "./src/components/app/app.component.html",
-    providers: [
-        OrderService,
-        CountryService,
-        CityService
-    ]
+    selector: "app",
+    moduleId: module.id,
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.css"]
 })
-export class AppComponent implements OnInit {
-    constructor(
-        private orderService: OrderService,
-        private countryService: CountryService,
-        private cityService: CityService
-    ) { }
-    ngOnInit(): void {
-        this.getOrders();
-        this.getCountries();
-        this.getCities();
-    }
-    orders: Order[];
-    getOrders(): void {
-        this.orderService.getOrders().then(orders => this.orders = orders);
-    }
-    getCountries(): void {
-        this.countryService.getCountries().then(countries => this.shipCountryLookupConfig = {
-            dataSource: countries,
-            valueExpr: "countryName",
-            displayExpr: "countryName"
+export class AppComponent {
+    navigationMenu: any[];
+    toolbarLinks: any[];
+    constructor(private router: Router) {
+        const caption = "Angular DX Application";
+        let links = router.config.filter(route => {
+            return route.data && route.data["title"];
+        }).map(route => {
+            return {
+                title: route.data["title"],
+                path: "/" + route.path
+            };
         });
-    }
-    getCities(): void {
-        this.cityService.getCities().then(cities => this.shipCityLookupConfig = {
-            dataSource: (options: any) => {
-                let dataSourceConfiguration: any = {
-                    store: cities
-                };
-                if (options.data) {
-                    dataSourceConfiguration.filter = ["country", "=", options.data.shipCountry];
-                }
-                return dataSourceConfiguration;
-            },
-            valueExpr: "cityName",
-            displayExpr: "cityName"
+        this.navigationMenu = [{
+            key: caption,
+            items: links
+        }];
+        this.toolbarLinks = links.map(link => {
+            return {
+                title: link.title,
+                path: link.path,
+                locateInMenu: "always"
+            };
         });
-    };
-
-    shipCountryLookupConfig: any;
-    shipCityLookupConfig: any;
-    setShipCountryValue(rowData: any, value: any): void {
-        rowData.shipCity = null;
-        (<any>this).defaultSetCellValue(rowData, value);
+        this.toolbarLinks.push({
+            title: caption,
+            locateInMenu: "never",
+            location: "before"
+        });
     }
 }
