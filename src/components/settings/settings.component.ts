@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { TranslateService } from "ng2-translate";
+import { LocalizeRouterService } from "localize-router/localize-router";
 
 @Component({
     selector: "settings",
@@ -7,11 +7,11 @@ import { TranslateService } from "ng2-translate";
     templateUrl: "./settings.component.html"
 })
 export class SettingsComponent {
-    constructor(private translate: TranslateService) {
-        this.language = translate.currentLang;
+    constructor(private localizeService: LocalizeRouterService) {
+        this.language = localizeService.parser.currentLang;
     }
     language: string;
     setLanguage() {
-
+        this.localizeService.changeLanguage(this.language);
     }
 }
