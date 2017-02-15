@@ -1,39 +1,14 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule, Routes, RouteReuseStrategy } from "@angular/router";
-import { CustomReuseStrategy } from "./custom-reuse-strategy";
 import { AppComponent } from "./components/app/app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CounterComponent } from "./components/counter/counter.component";
 import { DevExtremeModule } from "devextreme-angular";
-const appRoutes: Routes = [
-    {
-        path: "home",
-        component: HomeComponent,
-        data: {
-            title: "Home"
-        }
-    },
-    {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full"
-    },
-    {
-        path: "counter",
-        component: CounterComponent,
-        data: {
-            title: "Counter"
-        }
-    },
-    {
-        path: "**",
-        redirectTo: "/home"
-    }
-];
+import { AppRoutingModule } from "./app-routing.module";
+
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes),
+        AppRoutingModule,
         BrowserModule,
         DevExtremeModule
     ],
@@ -42,12 +17,7 @@ const appRoutes: Routes = [
         HomeComponent,
         CounterComponent
     ],
-    bootstrap: [AppComponent],
-    providers: [
-        {
-            provide: RouteReuseStrategy,
-            useClass: CustomReuseStrategy
-        }
-    ]
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
