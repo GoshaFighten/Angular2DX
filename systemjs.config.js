@@ -26,9 +26,12 @@
             'jquery': 'npm:jquery/dist/jquery.min.js',
             'jszip': 'npm:jszip/dist/jszip.min.js',
             'devextreme-angular': 'npm:devextreme-angular',
+            'devextreme-intl': 'npm:devextreme-intl/dist/devextreme-intl.js',
             // other libraries
             'rxjs': 'npm:rxjs',
             'angular2-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+            'ng2-translate': 'npm:ng2-translate/bundles/ng2-translate.umd.js',
+            'json': 'npm:systemjs-plugin-json/json.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {

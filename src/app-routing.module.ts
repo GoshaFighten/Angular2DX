@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes, RouteReuseStrategy } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { CounterComponent } from "./components/counter/counter.component";
+import { SettingsComponent } from "./components/settings/settings.component";
 import { CustomReuseStrategy } from "./custom-reuse-strategy";
 
 const appRoutes: Routes = [
@@ -9,7 +10,7 @@ const appRoutes: Routes = [
         path: "home",
         component: HomeComponent,
         data: {
-            title: "Home"
+            title: "NavMenu.Home"
         }
     },
     {
@@ -21,7 +22,14 @@ const appRoutes: Routes = [
         path: "counter",
         component: CounterComponent,
         data: {
-            title: "Counter"
+            title: "NavMenu.Counter"
+        }
+    },
+    {
+        path: "settings",
+        component: SettingsComponent,
+        data: {
+            title: "NavMenu.Settings"
         }
     }
 ];

@@ -26,11 +26,14 @@
     "@angular/platform-browser-dynamic": "~2.4.0",
     "@angular/router": "~3.4.0",
     "angular-in-memory-web-api": "~0.2.4",
-    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
     "devextreme": "^16.2.4",
     "devextreme-angular": "^16.2.4",
+    "devextreme-intl": "^16.2.4",
+    "ng2-translate": "^5.0.0",
     "rxjs": "5.0.1",
+    "systemjs": "0.19.40",
+    "systemjs-plugin-json": "^0.3.0",
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
