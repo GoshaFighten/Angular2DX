@@ -1,0 +1,8 @@
+<div class="dx-fieldset">
+    <div class="dx-field">
+        <div class="dx-field-label" id="languageLabel">Language: </div>
+        <div class="dx-field-value">
+            <dx-select-box aria-labeledby="languageLabel" #select [items]="['en', 'de']" [value]="language" (onValueChanged)="setLanguage(select.value)"></dx-select-box>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app",
@@ -7,9 +7,10 @@ import { Router } from "@angular/router";
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     navigationMenu: any[];
     toolbarLinks: any[];
+    lang = "de";
     constructor(private router: Router) {
         const caption = "Angular DX Application";
         let links = router.config.filter(route => {
@@ -17,7 +18,7 @@ export class AppComponent {
         }).map(route => {
             return {
                 title: route.data["title"],
-                path: "/" + route.path
+                path: route.path
             };
         });
         this.navigationMenu = [{
@@ -36,5 +37,16 @@ export class AppComponent {
             locateInMenu: "never",
             location: "before"
         });
+    }
+    isActive(instruction: any[]): boolean {
+        return this.router.isActive(this.router.createUrlTree(instruction), false);
+    }
+    navigate(path: string) {
+        this.router.navigate([this.lang, path]);
+    }
+    ngOnInit(): void {
+        // this.sub = this.route.params.subscribe(params => {
+        //     this.language = params["lang"];
+        // });
     }
 }
