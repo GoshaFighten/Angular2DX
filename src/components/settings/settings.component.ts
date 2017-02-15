@@ -8,9 +8,11 @@ import { LocalizeRouterService } from "localize-router/localize-router";
 })
 export class SettingsComponent {
     constructor(private localizeService: LocalizeRouterService) {
+        this.languages = localizeService.parser.locales;
         this.language = localizeService.parser.currentLang;
     }
     language: string;
+    languages: string[];
     setLanguage() {
         this.localizeService.changeLanguage(this.language);
     }

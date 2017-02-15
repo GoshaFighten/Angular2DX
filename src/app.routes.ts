@@ -13,7 +13,7 @@ export const appRoutes: Routes = [
     },
     {
         path: "",
-        redirectTo: "/home",
+        redirectTo: "/en/home",
         pathMatch: "full"
     },
     {
