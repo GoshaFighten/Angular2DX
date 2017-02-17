@@ -10,8 +10,8 @@ import { AppTranslateModule } from "./app-translate.module";
 
 @NgModule({
     imports: [
-        AppRoutingModule,
         AppTranslateModule,
+        AppRoutingModule,
         BrowserModule,
         DevExtremeModule
     ],

@@ -1,9 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Location } from "@angular/common";
 import { TranslateModule, TranslateService } from "ng2-translate";
-import { LocalizeRouterModule, LocalizeParser, ManualParserLoader, LocalizeRouterService } from "localize-router/localize-router";
+import { LocalizeRouterModule, LocalizeParser, LocalizeRouterService } from "localize-router/localize-router";
+import { AppManualParserLoader } from "./app-manual-parser-loader";
 import { appRoutes } from "./app.routes";
-import { loadMessages, locale } from "devextreme/localization";
+import { loadMessages } from "devextreme/localization";
 import "devextreme-intl";
 let messagesDe = require("devextreme/localization/messages/de.json!json");
 
@@ -15,7 +16,7 @@ loadMessages(messagesDe);
         LocalizeRouterModule.forRoot(appRoutes, {
             provide: LocalizeParser,
             useFactory: (translate: TranslateService, location: Location) =>
-                new ManualParserLoader(translate, location, ["en", "de"]),
+                new AppManualParserLoader(translate, location, ["en", "de"]),
             deps: [TranslateService, Location]
         }),
     ],
@@ -25,11 +26,4 @@ loadMessages(messagesDe);
     ]
 })
 export class AppTranslateModule {
-    constructor(private localizeService: LocalizeRouterService) {
-        locale(localizeService.parser.currentLang);
-        localizeService.routerEvents.subscribe((language: string) => {
-            debugger
-            locale(language);
-        });
-    }
 }
