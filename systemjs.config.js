@@ -30,7 +30,8 @@
             // other libraries
             'rxjs': 'npm:rxjs',
             'angular2-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-            'ng2-translate': 'npm:ng2-translate/bundles/ng2-translate.umd.js',
+            '@ngx-translate/core': 'npm:@ngx-translate/core/bundles/core.umd.js',
+            '@ngx-translate/http-loader': 'npm:@ngx-translate/http-loader/bundles/http-loader.umd.js',
             'localize-router/localize-router': 'npm:localize-router/bundles/localize-router.umd.js',
             'json': 'npm:systemjs-plugin-json/json.js'
         },
