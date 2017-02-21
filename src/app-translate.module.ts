@@ -16,6 +16,10 @@ export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
 }
 
+export function localizeLoaderFactory(translate: TranslateService, location: Location, http: Http) {
+    return new AppManualParserLoader(translate, location, ["en", "de"]);
+}
+
 @NgModule({
     imports: [
         HttpModule,
@@ -28,8 +32,7 @@ export function HttpLoaderFactory(http: Http) {
         }),
         LocalizeRouterModule.forRoot(appRoutes, {
             provide: LocalizeParser,
-            useFactory: (translate: TranslateService, location: Location) =>
-                new AppManualParserLoader(translate, location, ["en", "de"]),
+            useFactory: localizeLoaderFactory,
             deps: [TranslateService, Location]
         }),
     ],
