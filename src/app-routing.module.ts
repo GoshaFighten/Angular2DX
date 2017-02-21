@@ -9,12 +9,12 @@ import { appRoutes } from "./app.routes";
         RouterModule.forRoot(appRoutes)
     ],
     exports: [RouterModule],
-    // providers: [
-    //     {
-    //         provide: RouteReuseStrategy,
-    //         useClass: CustomReuseStrategy
-    //     }
-    // ]
+    providers: [
+        {
+            provide: RouteReuseStrategy,
+            useClass: CustomReuseStrategy
+        }
+    ]
 })
 export class AppRoutingModule {
 }

@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, Injector } from "@angular/core";
 import { Location } from "@angular/common";
 import { HttpModule, Http } from "@angular/http";
 import { TranslateModule, TranslateService, TranslateLoader } from "@ngx-translate/core";
@@ -16,8 +16,8 @@ export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
 }
 
-export function localizeLoaderFactory(translate: TranslateService, location: Location, http: Http) {
-    return new AppManualParserLoader(translate, location, ["en", "de"]);
+export function localizeLoaderFactory(translate: TranslateService, location: Location, injector: Injector) {
+    return new AppManualParserLoader(translate, location, injector, ["en", "de"]);
 }
 
 @NgModule({
@@ -33,7 +33,7 @@ export function localizeLoaderFactory(translate: TranslateService, location: Loc
         LocalizeRouterModule.forRoot(appRoutes, {
             provide: LocalizeParser,
             useFactory: localizeLoaderFactory,
-            deps: [TranslateService, Location]
+            deps: [TranslateService, Location, Injector]
         }),
     ],
     exports: [
