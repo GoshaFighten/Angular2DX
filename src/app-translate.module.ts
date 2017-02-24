@@ -3,7 +3,7 @@ import { Location } from "@angular/common";
 import { HttpModule, Http } from "@angular/http";
 import { TranslateModule, TranslateService, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { LocalizeRouterModule, LocalizeParser, LocalizeRouterService } from "localize-router/localize-router";
+import { LocalizeRouterModule, LocalizeParser, LocalizeRouterService } from "localize-router";
 import { AppManualParserLoader } from "./app-manual-parser-loader";
 import { appRoutes } from "./app.routes";
 import { loadMessages } from "devextreme/localization";

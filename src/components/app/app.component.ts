@@ -12,7 +12,7 @@ export class AppComponent {
     toolbarLinks: any[];
     constructor(private router: Router) {
         const caption = "Angular DX Application";
-        let links = router.config.filter(route => {
+        let links = router.config[1].children.filter(route => {
             return route.data && route.data["title"];
         }).map(route => {
             return {

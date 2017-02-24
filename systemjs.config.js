@@ -32,7 +32,7 @@
             'angular2-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
             '@ngx-translate/core': 'npm:@ngx-translate/core/bundles/core.umd.js',
             '@ngx-translate/http-loader': 'npm:@ngx-translate/http-loader/bundles/http-loader.umd.js',
-            'localize-router/localize-router': 'npm:localize-router/bundles/localize-router.umd.js',
+            'localize-router': 'npm:localize-router/bundles/localize-router.umd.js',
             'json': 'npm:systemjs-plugin-json/json.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension

@@ -1,6 +1,6 @@
 import { Injector } from "@angular/core";
 
-import { ManualParserLoader } from "localize-router/localize-router";
+import { ManualParserLoader } from "localize-router";
 import { locale } from "devextreme/localization";
 
 import { TranslateService } from "@ngx-translate/core";
