@@ -17,26 +17,20 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@angular/common": "~2.4.0",
-    "@angular/compiler": "~2.4.0",
-    "@angular/core": "~2.4.0",
-    "@angular/forms": "~2.4.0",
-    "@angular/http": "~2.4.0",
-    "@angular/platform-browser": "~2.4.0",
-    "@angular/platform-browser-dynamic": "~2.4.0",
-    "@angular/router": "3.4.7",
-    "@ngx-translate/core": "^6.0.0",
-    "@ngx-translate/http-loader": "0.0.3",
-    "angular-in-memory-web-api": "~0.2.4",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "devextreme": "^16.2.4",
-    "devextreme-angular": "^16.2.4",
-    "devextreme-intl": "^16.2.4",
-    "localize-router": "^0.6.3",
-    "rxjs": "5.0.1",
-    "systemjs": "0.19.40",
-    "systemjs-plugin-json": "^0.3.0",
-    "zone.js": "^0.7.4"
+    "devextreme-angular": "^16.2.6",
+    "rxjs": "^5.1.0",
+    "systemjs": "^0.20.12",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.36",
@@ -55,7 +49,7 @@
     "protractor": "~4.0.14",
     "rimraf": "^2.5.4",
     "tslint": "^3.15.1",
-    "typescript": "~2.0.10"
+    "typescript": "~2.2.1"
   },
   "repository": {}
 }
