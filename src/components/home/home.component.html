@@ -1,9 +1,9 @@
 <dx-data-grid [dataSource]="orders" height="100%" [showBorders]="true">
-    <dxi-column dataField="orderID" [caption]="ID"></dxi-column>
-    <dxi-column dataField="orderDate" dataType="date" [caption]="Date"></dxi-column>
-    <dxi-column dataField="customerName" [caption]="Date"></dxi-column>
-    <dxi-column dataField="shipCountry" [setCellValue]="setShipCountryValue" [lookup]="shipCountryLookupConfig" [caption]="Country"></dxi-column>
-    <dxi-column dataField="shipCity" [lookup]="shipCityLookupConfig" [caption]="City"></dxi-column>
+    <dxi-column dataField="orderID" caption="ID"></dxi-column>
+    <dxi-column dataField="orderDate" dataType="date" caption="Date"></dxi-column>
+    <dxi-column dataField="customerName" caption="Date"></dxi-column>
+    <dxi-column dataField="shipCountry" [setCellValue]="setShipCountryValue" [lookup]="shipCountryLookupConfig" caption="Country"></dxi-column>
+    <dxi-column dataField="shipCity" [lookup]="shipCityLookupConfig" caption="City"></dxi-column>
     <dxo-filter-row [visible]="true"></dxo-filter-row>
     <dxo-header-filter [visible]="true"></dxo-header-filter>
     <dxo-group-panel [visible]="true"></dxo-group-panel>
